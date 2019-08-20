@@ -48,28 +48,24 @@ body{
     padding: 30px 20px 20px 20px;
     margin:0;
     box-sizing: border-box;
-    width: 100vw;
     height: 600px;
     background-image: url(../images/hero.png);
     background-size: cover;
 }
 .descriptionHero{
+    text-align: right;
     text-transform: uppercase;
-    margin: 0 20px 0 auto;
+    margin: 0 5% 0 auto;
     font-family: 'Open Sans Condensed', sans-serif;
     color: black;
     width: 40%;
     height: auto;
     padding:20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     box-sizing: border-box;
     -webkit-box-shadow: 0px 10px 15px 10px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 10px 15px 10px rgba(0,0,0,0.2);
     box-shadow: 0px 10px 15px 10px rgba(0,0,0,0.2);
-}
-{
-   font-family:  "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
-   letter-spacing: .5rem;
 }
 .descriptionHero h2, p{
   font-size: 1.4em;
@@ -79,7 +75,7 @@ body{
   margin:0;
 }
 .myButton {
-  margin: 10px auto 10px auto;
+    margin: 10px auto 10px auto;
 	-moz-box-shadow: 3px 4px 0px 0px #dd1d1a;
 	-webkit-box-shadow: 3px 4px 0px 0px #dd1d1a;
 	box-shadow: 3px 4px 0px 0px #dd1d1a;
