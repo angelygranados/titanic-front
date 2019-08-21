@@ -27,17 +27,68 @@
                 <h2> Do you want to travel on the most famous cruise ship in the world? </h2>
                 <p> Come and enjoy the adventure of your life </br> find out if your <strong>live</strong> or <strong>die</strong> on The TITANIC</p>
                 <a href="#tickets" class="myButton">BOOK NOW</a>    
-            </div>
-            
-            
+            </div>     
         </section>
         <section class="sales" id="tickets">
-            
+            <img src="../static/images/tickets-image.png" alt="Ship">
+            <h3>Book your travel</h3>
+            <form action="/action_page.php" target="_blank">
+                Name:
+                    <input name="personalTitle" id="personalTitle" list="pTitles" required style="width: 70px">
+                    <input type="text" maxlength="100" required><br>
+                Age:
+                    <input name="age" type="number" min="0" max="100" required>
+                Gender:
+                    <input type="radio" name="gender" value="male" checked> Male
+                    <input type="radio" name="gender" value="female"> Female<br>
+               Travel with someone else?
+                    <input name="companions" type="number" min="0" required style="width: 50px"><br>
+                Class:
+                    <input type="radio" name="class" value="1" checked> 1
+                    <input type="radio" name="class" value="2"> 2
+                    <input type="radio" name="class" value="3"> 3<br>
+                Type of cabin:
+                    <input type="radio" name="embarqued" value="C" checked> C
+                    <input type="radio" name="embarqued" value="Q"> Q
+                    <input type="radio" name="embarqued" value="S"> S<br>
+                Rate:
+                    <input name="rate" type="number" min="0" max="512" required><br>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+            <datalist id="pTitles">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Don">Don</option>
+                <option value="Dona">Dona</option>
+                <option value="Sir">Sir</option>
+                <option value="Lady">Lady</option>
+                <option value="Master">Master</option>
+                <option value="Major">Major</option>
+                <option value="Capt">Capt</option>
+                <option value="Dr">Dr</option>
+                <option value="Rev">Rev</option>
+                <option value="Countess">Countess</option>
+                <option value="Col">Col</option>
+                <option value="Jonkheer">Jonkheer</option>
+            </datalist>
         </section>
         <section class="about" id="aboutUs">
+            <h3>A little history about the TITANIC</h3>
+            <p>
+                RMS Titanic was a Britishpassenger liner that sank in theNorth Atlantic Ocean in 1912 after the ship struck an icebergduring her maiden voyage fromSouthampton to New York City. <br><br>Of the estimated 2,224 passengersand crew aboard, more than 1,500died, making it one of modernhistory's deadliest peacetimecommercial marine disasters.<br><br>
+                RMS Titanic was the largest ship afloat at the time she entered service and was the second of three Olympic-class ocean liners operated by the White Star Line. She was built by the Harland and Wolff shipyard in Belfast. Thomas Andrews, chief naval architect of the shipyard at the time, died in the disaster. 
+            </p>
             
         </section>
         <footer class="footer" id="info">
+            <div>
+                If you want to use this API, feel free to do it. We only ask that you please give us credits in your project. <br>
+                <a href="#API">API</a>   
+            </div>
+            <div>
+                A project created by <a href="https://twitter.com/angelygranados">@angelygranados</a>  and <a href="https://twitter.com/osmandi">@osmandi</a> 
+            </div>
             
         </footer>
     </div>   

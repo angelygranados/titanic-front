@@ -28,8 +28,9 @@ body{
 }
 .menu{
     height: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20px;
+    font-weight: bold;
 }
 .menu ul{
     margin: 0;
@@ -48,7 +49,7 @@ body{
     padding: 30px 20px 20px 20px;
     margin:0;
     box-sizing: border-box;
-    height: 600px;
+    height: 500px;
     background-image: url(../images/hero.png);
     background-size: cover;
 }
@@ -113,4 +114,95 @@ body{
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+.sales, .about, .footer{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px; 
+    text-align: center;
+    line-height: 30px;
+}
+.sales{
+    font-weight: bold;
+    padding: 10%;
+}
+.sales h3{
+    font-size: 1.5em;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: left;
+}
+.sales img{
+    width: 50%;
+    text-align: right;
+    position: absolute;
+    z-index: -1;
+    right: 10%;
+}
+.sales form{
+    text-align: left;
+}
+#submit{
+    margin: 10px auto 10px auto;
+    -moz-box-shadow: 3px 4px 0px 0px #dd1d1a;
+    -webkit-box-shadow: 3px 4px 0px 0px #dd1d1a;
+    box-shadow: 3px 4px 0px 0px #dd1d1a;
+    background:-webkit-gradient(linear, left top,left bottom, color-stop(0.05, #ff6666),color-stop(1, #dd1d1a));
+    background:-moz-linear-gradient(top, #ff66665%, #dd1d1a 100%);
+    background:-webkit-linear-gradient(top,#ff6666 5%, #dd1d1a 100%);
+    background:-o-linear-gradient(top, #ff6666 5% #dd1d1a 100%);
+    background:-ms-linear-gradient(top, #ff66665%, #dd1d1a 100%);
+    background:linear-gradient(to bottom, #ff66665%, #dd1d1a 100%);
+    filter:progid:DXImageTransform.Microsoftgradient(startColorstr='#ff6666',endColorstr='#dd1d1a',GradientType=0);
+    background-color:#ff6666;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border:1px solid #c21b1b;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Trebuchet MS;
+    font-size:17px;
+    padding:12px 44px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+    }
+#submit:hover {
+    background:-webkit-gradient(linear, left top,left bottom, color-stop(0.05, #dd1d1a),color-stop(1, #ff6666));
+    background:-moz-linear-gradient(top, #dd1d1a5%, #ff6666 100%);
+    background:-webkit-linear-gradient(top,#dd1d1a 5%, #ff6666 100%);
+    background:-o-linear-gradient(top, #dd1d1a 5% #ff6666 100%);
+    background:-ms-linear-gradient(top, #dd1d1a5%, #ff6666 100%);
+    background:linear-gradient(to bottom, #dd1d1a5%, #ff6666 100%);
+    filter:progid:DXImageTransform.Microsoftgradient(startColorstr='#dd1d1a',endColorstr='#ff6666',GradientType=0);
+    background-color:#dd1d1a;
+    }
+#submit:active {
+    position:relative;
+    top:1px;
+    }
+.about{
+    color: white;
+    background-color: #0083C3;
+    padding: 10%;
+}
+.about h3{
+    font-size: 1.5em;
+    margin: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.footer{
+    height: 150px;
+    text-align: center;
+    background-color: #DD1C1A;
+    color: white;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    padding: 5% 0 10% 0;
+}
+.footer a{
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
 }
