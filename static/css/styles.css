@@ -140,6 +140,8 @@ body{
 }
 .sales form{
     text-align: left;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 #submit{
     margin: 10px auto 10px auto;
