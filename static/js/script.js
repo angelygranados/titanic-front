@@ -1,32 +1,14 @@
-// const testForm = document.getElementById('formulario');
-// testForm.onsubmit = function(event){
-//     event.preventDefault();
-
-//     // const request = new XMLHttpRequest();
-//     // request.open('POST', 'https://httpbin.org/post', async = false);
-
-//     const formData = new FormData(document.getElementById('formulario'));
-//     // request.send(formData);
-
-//     console.log(formData);
-// }
-
-const data = new FormData(document.getElementById('formulario'));
-fetch('../post.php', {
-    method: 'POST',
-    body: data
-})
-.then(function(response){
-    if(response.ok){
-        return response.text()
-    }
-    else{
-        throw "Error en la llamada Ajax";
-    }
-})
-.then(function(texto){
-    console.log(texto);
-})
-.catch(function(err){
-    console.log(err);
-});
+const testForm = document.getElementById('formulario');
+testForm.onsubmit = function(event){
+    event.preventDefault();
+    const data = new FormData(document.getElementById('formulario'));
+    var title = data.get('pTitles');
+    var age = data.get("age");
+    var gender = data.get('gender');
+    var companions = data.get('companions');
+    var clase = data.get('class');
+    var embarqued = data.get('embarqued');
+    var rate = data.get('rate');
+    var url = "http://3.16.15.195:5000/v1/titanic/"
+    console.log(`${url}${clase}/${gender}/${age}/${rate}/${embarqued}/${title}/${companions}`)  
+}
