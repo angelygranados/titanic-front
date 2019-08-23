@@ -22,19 +22,19 @@
             </nav>
         </header>
         <section class="hero">
+            <div class="imageHero"></div>
             <div class="descriptionHero">
                 <img src="../static/images/hero-title.png" alt="Hero Title">
                 <h2> Do you want to travel on the most famous cruise ship in the world? </h2>
                 <p> Come and enjoy the adventure of your life </br> find out if your <strong>live</strong> or <strong>die</strong> on The TITANIC</p>
                 <a href="#tickets" class="myButton">BOOK NOW</a>    
-            </div>     
+            </div>    
         </section>
         <section class="sales" id="tickets">
-            <img src="../static/images/tickets-image.png" alt="Ship">
-            <h3>Book your travel</h3>
-            <form id="formulario" >
+            <form id="formulario" class="formContainer">
+                <h3>Book your travel</h3>
                 Name:
-                <select name="pTitles" required style="width: 70px" form="formulario">
+                <select name="pTitles" required form="formulario">
                         <option value="Mr">Mr</option>
                         <option value="Mrs">Mrs</option>
                         <option value="Miss">Miss</option>
@@ -50,28 +50,28 @@
                         <option value="Countess">Countess</option>
                         <option value="Col">Col</option>
                         <option value="Jonkheer">Jonkheer</option>
-                    </select>
-                    <input type="text" maxlength="100" required><br>
+                </select>
+                <input name="nameID" type="text" maxlength="100" required id="name"><br>
                 Age:
-                    <input name="age" type="number" min="0" max="100" required>
+                <input name="age" type="number" min="0" max="100" required>
                 Gender:
-                    <input type="radio" name="gender" value="male" checked> Male
-                    <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="male" checked> Male
+                <input type="radio" name="gender" value="female"> Female<br>
                Travel with someone else?
-                    <input name="companions" type="number" min="0" required style="width: 50px"><br>
+                <input name="companions" type="number" min="0" required style="width: 100px"><br>
                 Class:
-                    <input type="radio" name="class" value="1" checked> 1
-                    <input type="radio" name="class" value="2"> 2
-                    <input type="radio" name="class" value="3"> 3<br>
+                <input type="radio" name="class" value="1" checked> 1
+                <input type="radio" name="class" value="2"> 2
+                <input type="radio" name="class" value="3"> 3<br>
                 Type of cabin:
-                    <input type="radio" name="embarqued" value="c" checked> C
-                    <input type="radio" name="embarqued" value="q"> Q
-                    <input type="radio" name="embarqued" value="s"> S<br>
-                Rate:
-                    <input name="rate" type="number" min="0" max="512" required><br>
-                    <input id="formButton" type="submit" value="Book it!">
-                </form>
-            
+                <input type="radio" name="embarqued" value="c" checked> C
+                <input type="radio" name="embarqued" value="q"> Q
+                <input type="radio" name="embarqued" value="s"> S<br>
+                Rate: (0 - 512)
+                <input name="rate" type="number" min="0" max="512" id="rate" required><br>
+                <input id="formButton" type="submit" value="BOOK IT!">
+            </form>
+            <img src="../static/images/tickets-image.png" alt="Ship" class="formIMG"> 
         </section>
         <section class="about" id="aboutUs">
             <h3>A little history about the TITANIC</h3>
