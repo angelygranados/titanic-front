@@ -33,10 +33,20 @@ const $modalDescription = $modal.querySelector('p');
 function showModal(data) {
     $overlay.classList.add('active');
     $modal.style.animation = 'modalIn .8s forwards';
+    const living = "YOU LIVE";
+    const dying = "YOU DIE";
+    const message = " IF YOU TRAVEL ON THE TITANIC:"
     const resultado = data.result;
-    $modalTitle.textContent = ` ${name.toUpperCase()}, SI VIAJAS EN EL TITANIC:  \n`
+    if (resultado == "Vives"){
+        $modalTitle.textContent = ` ${name.toUpperCase()} ${message} \n`
     // $modalImage.setAttribute('src', data.medium_cover_image);
-    $modalDescription.textContent = `${resultado.toUpperCase()}\n`
+       $modalDescription.textContent = `${living.toUpperCase()}\n`
+    }
+    else if(resultado == "Mueres"){
+        $modalTitle.textContent = ` ${name.toUpperCase()}${message}  \n`
+       $modalDescription.textContent = `${dying.toUpperCase()}\n`
+    }
+    
   }
 
   $hideModal.addEventListener('click', hideModal);
