@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/modal.css">
     <title>Titanic ¿Vives o mueres?</title>
 </head>
 <body>
+    <i class="icon-menu burger-button" id="burger-menu"></i>
     <div class="appContainer">
         <header class="header">
             <img class="logo"src="../static/images/titanic-logo.png" alt="Titanic Logo">
             <h1 class="title">Titanic</h1>          
-            <nav class="menu">
+            <nav class="menu is-active">
                 <ul>
                     <li><a href="#tickets">Buy Tickets</a></li></li>
                     <li> <a href="#aboutUs">About</a></li>
@@ -72,14 +74,24 @@
                 <input id="formButton" type="submit" value="BOOK IT!">
             </form>
             <img src="../static/images/tickets-image.png" alt="Ship" class="formIMG"> 
+            <div class="overlay" id="overlay"></div>
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <img src="../static/images/lifesaver.png" alt="Lifesaver">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-btn primary" id="hide-modal">Try Again!</button>
+                </div>
+            </div>
         </section>
         <section class="about" id="aboutUs">
             <h3>A little history about the TITANIC</h3>
             <p>
                 RMS Titanic was a Britishpassenger liner that sank in theNorth Atlantic Ocean in 1912 after the ship struck an icebergduring her maiden voyage fromSouthampton to New York City. <br><br>Of the estimated 2,224 passengersand crew aboard, more than 1,500died, making it one of modernhistory's deadliest peacetimecommercial marine disasters.<br><br>
                 RMS Titanic was the largest ship afloat at the time she entered service and was the second of three Olympic-class ocean liners operated by the White Star Line. She was built by the Harland and Wolff shipyard in Belfast. Thomas Andrews, chief naval architect of the shipyard at the time, died in the disaster. 
-            </p>
-            
+            </p> 
         </section>
         <footer class="footer" id="info">
             <div>
@@ -95,4 +107,29 @@
     
 </body>
 <script src="../static/js/script.js"></script>
+<script>
+        // console.log('Hola mundo! es mi primera linea en JS');
+        const ipad = window.matchMedia('screen and (max-width: 767px)')
+        const menu = document.querySelector('.menu');
+        menu.classList.remove('is-active');
+        //console.log(menu);
+        const burgerButton = document.querySelector('#burger-menu');
+        // console.log(burgerButton);
+        ipad.addListener(validation)
+        function validation(event) {
+          if (event.matches) {
+            burgerButton.addEventListener('click', hideShow)
+          } else {
+            burgerButton.removeEventListener('click', hideShow)
+          }
+        }
+        validation(ipad);
+        function hideShow() {
+          if (menu.classList.contains('is-active')) {
+            menu.classList.remove('is-active');
+          } else {
+            menu.classList.add('is-active');
+          }
+        }
+      </script>
 </html>

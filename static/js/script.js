@@ -1,8 +1,10 @@
 // var testResult;
 const testForm = document.getElementById('formulario');
+// const modal = document.getElementById('popup');
 testForm.onsubmit = function (event){
     event.preventDefault();
     const data = new FormData(document.getElementById('formulario'));
+    name = data.get('nameID');
     var title = data.get('pTitles');
     var age = data.get("age");
     var gender = data.get('gender');
@@ -14,7 +16,32 @@ testForm.onsubmit = function (event){
     fetch(url)
     .then(response => response.json())
     .then(data => {
-    alert(data.result) // Prints result from `response.json()` in getRequest
+        showModal(data);        
+        // Prints result from `response.json()` in getRequest
     })
     .catch(error => console.error(error))
 }
+var name;
+const $modal = document.getElementById('modal');
+  const $overlay = document.getElementById('overlay');
+  const $hideModal = document.getElementById('hide-modal');
+
+const $modalTitle = $modal.querySelector('h3');
+const $modalImage = $modal.querySelector('img');
+const $modalDescription = $modal.querySelector('p');
+
+function showModal(data) {
+    $overlay.classList.add('active');
+    $modal.style.animation = 'modalIn .8s forwards';
+    const resultado = data.result;
+    $modalTitle.textContent = ` ${name.toUpperCase()}, SI VIAJAS EN EL TITANIC:  \n`
+    // $modalImage.setAttribute('src', data.medium_cover_image);
+    $modalDescription.textContent = `${resultado.toUpperCase()}\n`
+  }
+
+  $hideModal.addEventListener('click', hideModal);
+  function hideModal() {
+    $overlay.classList.remove('active');
+    $modal.style.animation = 'modalOut .8s forwards';
+
+  }
