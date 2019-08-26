@@ -79,9 +79,14 @@
                 <div class="modal-content">
                     <img src="../static/images/lifesaver.png" alt="Lifesaver">
                     <h3></h3>
-                    <p></p>
+                    <h4></h4>
+                    <p>SHARE YOUR RESULT:</p>
                 </div>
                 <div class="modal-buttons">
+                    <div class="social">
+                        <button id="twitter" class="modal-btn twitter" data-sharer="twitter" data-title="I traveled on the Titanic, try yourself" data-hashtags="awesome" data-url="http://3.16.15.195:5000/">Twitter</button>
+                        <button id="facebook"class="modal-btn facebook" data-sharer="facebook" data-hashtag="hashtag" data-url="http://3.16.15.195:5000/">Facebook</button>
+                    </div>
                     <button class="modal-btn primary" id="hide-modal">Try Again!</button>
                 </div>
             </div>
@@ -108,28 +113,28 @@
 </body>
 <script src="../static/js/script.js"></script>
 <script>
-        // console.log('Hola mundo! es mi primera linea en JS');
-        const ipad = window.matchMedia('screen and (max-width: 767px)')
-        const menu = document.querySelector('.menu');
-        menu.classList.remove('is-active');
-        //console.log(menu);
-        const burgerButton = document.querySelector('#burger-menu');
-        // console.log(burgerButton);
-        ipad.addListener(validation)
-        function validation(event) {
-          if (event.matches) {
-            burgerButton.addEventListener('click', hideShow)
-          } else {
-            burgerButton.removeEventListener('click', hideShow)
-          }
-        }
-        validation(ipad);
-        function hideShow() {
-          if (menu.classList.contains('is-active')) {
-            menu.classList.remove('is-active');
-          } else {
-            menu.classList.add('is-active');
-          }
-        }
-      </script>
+const ipad = window.matchMedia('screen and (max-width: 767px)')
+  const menu = document.querySelector('.menu');
+  menu.classList.remove('is-active');
+  //console.log(menu);
+  const burgerButton = document.querySelector('#burger-menu');
+  // console.log(burgerButton);
+  ipad.addListener(validation)
+  function validation(event) {
+    if (event.matches) {
+      burgerButton.addEventListener('click', hideShow)
+    } else {
+      burgerButton.removeEventListener('click', hideShow)
+    }
+  }
+  validation(ipad);
+  function hideShow() {
+    if (menu.classList.contains('is-active')) {
+      menu.classList.remove('is-active');
+    } else {
+      menu.classList.add('is-active');
+    }
+  }</script>
+<script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+
 </html>

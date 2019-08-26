@@ -28,23 +28,25 @@ const $modal = document.getElementById('modal');
 
 const $modalTitle = $modal.querySelector('h3');
 const $modalImage = $modal.querySelector('img');
-const $modalDescription = $modal.querySelector('p');
+const $modalDescription = $modal.querySelector('h4');
+
 
 function showModal(data) {
     $overlay.classList.add('active');
     $modal.style.animation = 'modalIn .8s forwards';
-    const living = "YOU LIVE";
-    const dying = "YOU DIE";
     const message = " IF YOU TRAVEL ON THE TITANIC:"
     const resultado = data.result;
     if (resultado == "Vives"){
-        $modalTitle.textContent = ` ${name.toUpperCase()} ${message} \n`
+        $modalTitle.textContent = `${name.toUpperCase()} ${message} \n`
     // $modalImage.setAttribute('src', data.medium_cover_image);
-       $modalDescription.textContent = `${living.toUpperCase()}\n`
+       $modalDescription.textContent = `YOU LIVE\n`
+       $modal.querySelector('#twitter').setAttribute("data-title", `I traveled on the Titanic and I lived! 🤩 Try it and share your result.`);
+     
     }
     else if(resultado == "Mueres"){
-        $modalTitle.textContent = ` ${name.toUpperCase()}${message}  \n`
-       $modalDescription.textContent = `${dying.toUpperCase()}\n`
+        $modalTitle.textContent = `${name.toUpperCase()} ${message}  \n`
+       $modalDescription.textContent = `YOU DIE\n`
+       $modal.querySelector('#twitter').setAttribute("data-title", `I traveled on the Titanic and I died! 😖 Try it and share your result.`);
     }
     
   }

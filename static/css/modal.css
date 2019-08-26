@@ -1,7 +1,12 @@
-.modal-btn { 
+.modal h3, p{
   font-size: 1em;
+}
+.modal h4{
+  margin: 0.5em;
+  font-size: 1.5em;
+}
+.modal-btn { 
   text-align: center;
-  padding: .8em 1.2em;
   border: none;
   color: white;
   background: lightgray;
@@ -14,7 +19,19 @@
   will-change: transform;
 }
 .modal-btn.primary {
-  background: #00ABFD;
+  font-size: 1em;
+  padding: .8em 1.2em;
+  background:#21C08B ;
+}
+.modal-btn.twitter {
+  font-size: .8em;
+  padding: .4em .8em;
+  background: #60A9DE;
+}
+.modal-btn.facebook {
+  font-size: .8em;
+  padding: .4em .8em;
+  background: #3B5998;
 }
 .modal-btn.warning {
   background: #ff463b;
