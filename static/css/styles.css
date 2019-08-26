@@ -369,6 +369,9 @@ body{
         box-sizing: border-box;
          
     }
+    .menu ul li{
+        display: block;
+    }
     
     .menu.is-active{
         right: 10px;
