@@ -76,6 +76,11 @@ body{
 .menu ul li{
     display: inline-block;
 }
+.menu ul li a:hover{
+    text-decoration: underline;
+    color: #ffffff;
+    padding: 0.3em;
+}
 .menu ul li a{
     text-decoration: none;
     color: #ffffff;
