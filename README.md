@@ -2,6 +2,7 @@
 * CSS Grid
 * Flexbox
 * Javascript
+* UI design
 * Integración API
 
-[Enlace al proyecto](http://3.16.15.195:5000/)
+[Enlace al proyecto](https://titanic.now.sh/)
