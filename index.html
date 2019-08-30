@@ -18,11 +18,11 @@
     <i class="icon-menu burger-button" id="burger-menu"></i>
     <div class="appContainer">
         <header class="header">
-            <a href="https://titanic.now.sh"><img class="logo"src="static/images/titanic-logo.png" alt="Titanic Logo"></a>
+            <a href="https://titanic.now.sh"><img class="logo" src="static/images/titanic-logo.png" alt="Titanic Logo"></a>
             <a href="https://titanic.now.sh"><h1 class="title">Titanic</h1></a>          
             <nav class="menu is-active">
                 <ul>
-                    <li><a href="#tickets">Buy Tickets</a></li></li>
+                    <li><a href="#tickets">Buy Tickets</a></li>
                     <li> <a href="#aboutUs">About</a></li>
                     <li><a href="#info">Info</a></li>
                 </ul>
@@ -33,7 +33,7 @@
             <div class="descriptionHero">
                 <img src="static/images/hero-title.png" alt="Hero Title">
                 <h2> Do you want to travel on the most famous cruise ship in the world? </h2>
-                <p> Come and enjoy the adventure of your life </br> find out if your <strong>live</strong> or <strong>die</strong> on The TITANIC</p>
+                <p> Come and enjoy the adventure of your life <br> find out if your <strong>live</strong> or <strong>die</strong> on The TITANIC</p>
                 <a href="#tickets" class="myButton">BOOK NOW</a>    
             </div>    
         </section>
@@ -41,7 +41,7 @@
             <form id="formulario" class="formContainer">
                 <h3>Book your travel</h3>
                 Name:
-                <select name="pTitles" required form="formulario">
+                <select multiple="multiple" name="pTitles" required form="formulario">
                         <option value="Mr">Mr</option>
                         <option value="Mrs">Mrs</option>
                         <option value="Miss">Miss</option>
@@ -83,14 +83,14 @@
             <div class="modal" id="modal">
                 <div class="modal-content">
                     <img src="static/images/lifesaver.png" alt="Lifesaver">
-                    <h3></h3>
-                    <h4></h4>
+                    <h3>Tu nombre</h3>
+                    <h4>Vives o mueres</h4>
                     <p>SHARE YOUR RESULT:</p>
                 </div>
                 <div class="modal-buttons">
                     <div class="social">
                         <button id="twitter" class="modal-btn twitter" data-sharer="twitter" data-title="I traveled on the Titanic, try yourself" data-hashtags="awesome, machinelearning, app" data-url="https://titanic.now.sh">Twitter</button>
-                        <button id="facebook"class="modal-btn facebook" data-sharer="facebook" data-hashtag="machinelearning, app" data-url="https://titanic.now.sh">Facebook</button>
+                        <button id="facebook" class="modal-btn facebook" data-sharer="facebook" data-hashtag="machinelearning, app" data-url="https://titanic.now.sh">Facebook</button>
                     </div>
                     <button class="modal-btn primary" id="hide-modal">Try Again!</button>
                 </div>
@@ -114,8 +114,6 @@
             
         </footer>
     </div>   
-    
-</body>
 <script src="static/js/script.js"></script>
 <script>
 const ipad = window.matchMedia('screen and (max-width: 767px)')
@@ -141,5 +139,5 @@ const ipad = window.matchMedia('screen and (max-width: 767px)')
     }
   }</script>
 <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
-
+</body>
 </html>

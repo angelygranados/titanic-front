@@ -19,7 +19,7 @@ testForm.onsubmit = function (event){
         showModal(data);        
         // Prints result from `response.json()` in getRequest
     })
-    .catch(error => console.error(error))
+    .catch(error => alert('Somethings wrong, please try it later!'));
 }
 var name;
 const $modal = document.getElementById('modal');
