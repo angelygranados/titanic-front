@@ -12,14 +12,13 @@ testForm.onsubmit = function (event){
     var clase = data.get('class');
     var embarqued = data.get('embarqued');
     var rate = data.get('rate');
-    var url = (`http://3.16.15.195:5000/v1/titanic/${clase}/${gender}/${age}/${rate}/${embarqued}/${title}/${companions}`); 
+    var url = (`http://osmandi.com/v1/titanic/${clase}/${gender}/${age}/${rate}/${embarqued}/${title}/${companions}`); 
     fetch(url)
     .then(response => response.json())
     .then(data => {
         showModal(data);        
-        // Prints result from `response.json()` in getRequest
     })
-    .catch(error => alert('Somethings wrong, please try it later!'));
+    .catch(error => errorModal());
 }
 var name;
 const $modal = document.getElementById('modal');
@@ -29,6 +28,7 @@ const $modal = document.getElementById('modal');
 const $modalTitle = $modal.querySelector('h3');
 const $modalImage = $modal.querySelector('img');
 const $modalDescription = $modal.querySelector('h4');
+const $modalShare = $modal.querySelector('p');
 
 
 function showModal(data) {
@@ -37,18 +37,23 @@ function showModal(data) {
     const message = " IF YOU TRAVEL ON THE TITANIC:"
     const resultado = data.result;
     if (resultado == "Vives"){
-        $modalTitle.textContent = `${name.toUpperCase()} ${message} \n`
-    // $modalImage.setAttribute('src', data.medium_cover_image);
-       $modalDescription.textContent = `YOU LIVE\n`
+        $modalTitle.textContent = `${name.toUpperCase()} ${message} \n`;
+       $modalDescription.textContent = `YOU LIVE\n`;
+       $modalShare.textContent = `SHARE YOUR RESULT:`;
        $modal.querySelector('#twitter').setAttribute("data-title", `I traveled on the Titanic and I lived! 🤩 Try it and share your result.`);
      
     }
     else if(resultado == "Mueres"){
-        $modalTitle.textContent = `${name.toUpperCase()} ${message}  \n`
-       $modalDescription.textContent = `YOU DIE\n`
-       $modal.querySelector('#twitter').setAttribute("data-title", `I traveled on the Titanic and I died! 😖 Try it and share your result.`);
+      $modalTitle.textContent = `${name.toUpperCase()} ${message}  \n`;
+      $modalDescription.textContent = `YOU DIE\n`;
+      $modalShare.textContent = `SHARE YOUR RESULT:`;
+      $modal.querySelector('#twitter').setAttribute("data-title", `I traveled on the Titanic and I died! 😖 Try it and share your result.`);
     }
     
+  }
+  function errorModal(){
+    $overlay.classList.add('active');
+    $modal.style.animation = 'modalIn .8s forwards';
   }
 
   $hideModal.addEventListener('click', hideModal);
@@ -57,3 +62,4 @@ function showModal(data) {
     $modal.style.animation = 'modalOut .8s forwards';
 
   }
+ 

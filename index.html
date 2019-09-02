@@ -41,7 +41,7 @@
             <form id="formulario" class="formContainer">
                 <h3>Book your travel</h3>
                 Name:
-                <select multiple="multiple" name="pTitles" required form="formulario">
+                <select size="1" name="pTitles" required form="formulario">
                         <option value="Mr">Mr</option>
                         <option value="Mrs">Mrs</option>
                         <option value="Miss">Miss</option>
@@ -65,7 +65,7 @@
                 <input type="radio" name="gender" value="male" checked> Male
                 <input type="radio" name="gender" value="female"> Female<br>
                Travel with someone else?
-                <input name="companions" type="number" min="0" required style="width: 100px"><br>
+                <input name="companions" type="number" min="0" max="50" required style="width: 100px"><br>
                 Class:
                 <input type="radio" name="class" value="1" checked> 1
                 <input type="radio" name="class" value="2"> 2
@@ -81,11 +81,12 @@
             <img src="static/images/tickets-image.png" alt="Ship" class="formIMG"> 
             <div class="overlay" id="overlay"></div>
             <div class="modal" id="modal">
+                <img src="static/images/close.png" alt="Close" class="closeModal" onclick="hideModal()">
                 <div class="modal-content">
                     <img src="static/images/lifesaver.png" alt="Lifesaver">
-                    <h3>Tu nombre</h3>
-                    <h4>Vives o mueres</h4>
-                    <p>SHARE YOUR RESULT:</p>
+                    <h3>DEAR FRIEND</h3>
+                    <h4>WE'RE SORRY, SOMETHING GOES WRONG</h4>
+                    <p>PLEASE, TRY IT LATER!</p>
                 </div>
                 <div class="modal-buttons">
                     <div class="social">
@@ -106,7 +107,7 @@
         <footer class="footer" id="info">
             <div>
                 If you want to use this API, feel free to do it. We only ask that you please give us credits in your project. <br>
-                <a href="#API">API</a>   
+                <a href="https://osmandi.com/api-titanic">API</a>   
             </div>
             <div>
                 A project created by <a href="https://twitter.com/angelygranados">@angelygranados</a>  and <a href="https://twitter.com/osmandi">@osmandi</a> 

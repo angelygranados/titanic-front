@@ -97,6 +97,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
 .modal-content p {
   align-self: center;
 }
+.closeModal{
+  width: 25px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.closeModal:hover{
+  opacity: 0.7;
+}
 /*@keyframes animationIn {*/
 @keyframes modalIn {
   0% {
