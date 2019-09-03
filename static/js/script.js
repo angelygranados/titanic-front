@@ -12,7 +12,7 @@ testForm.onsubmit = function (event){
     var clase = data.get('class');
     var embarqued = data.get('embarqued');
     var rate = data.get('rate');
-    var url = (`http://osmandi.com/v1/titanic/${clase}/${gender}/${age}/${rate}/${embarqued}/${title}/${companions}`); 
+    var url = (`https://osmandi.com/v1/titanic/${clase}/${gender}/${age}/${rate}/${embarqued}/${title}/${companions}`); 
     fetch(url)
     .then(response => response.json())
     .then(data => {
