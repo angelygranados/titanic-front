@@ -1,0 +1,25 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    position: absolute;
+    top: 15vh;
+    right: 15vh;
+    color: white;
+    text-align: center;
+    font-family: 'Sucrose Bold Two';
+    text-align: right;
+    font-size: 8vw;
+    margin: 0;
+    line-height: .8;
+    filter: drop-shadow(0 0 .75em black);
+    span {
+      display: block;
+    }
+  }
+}
