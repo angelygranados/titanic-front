@@ -1,0 +1,9 @@
+.Form {
+  min-height: 100vh;
+  padding: 5%;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

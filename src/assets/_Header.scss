@@ -1,15 +1,34 @@
 .Header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url('../assets/images/hero-titanic.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  .btn {
+    position: absolute;
+    top: 90vh;
+    left: calc(50vw - 25px);
+    z-index: 5;
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
+     animation: arrowAnimation 2s infinite ease-in-out;
+    .arrow {
+      width: 50px;
+      height: 50px;
+    }
+  }
   h1 {
     position: absolute;
-    top: 15vh;
-    right: 15vh;
+    top: 50vh;
+    left: 15vh;
     color: white;
     text-align: center;
     font-family: 'Sucrose Bold Two';
@@ -20,6 +39,18 @@
     filter: drop-shadow(0 0 .75em black);
     span {
       display: block;
+      font-family: 'IM Fell French Canon Pro';
+      font-size: 0.38em;
+      line-height: 2;
+  
     }
+  }
+}
+@keyframes arrowAnimation {
+  from {
+    top: 90h;
+  }
+  to {
+    top: 91vh;
   }
 }

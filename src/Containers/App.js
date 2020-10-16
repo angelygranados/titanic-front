@@ -1,11 +1,10 @@
 import React from 'react';
+import Form from '../Components/Form';
 
 function App() {
   return (
     <main className="Main">
-      <section className="Hero">
-
-      </section>
+      <Form/>
     </main>
   );
 }
