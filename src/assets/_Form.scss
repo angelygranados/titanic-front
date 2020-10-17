@@ -1,9 +1,123 @@
 .Form {
   min-height: 100vh;
   padding: 5%;
+  background: url("../assets/images/waves.png"), #44aadd;
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    .traveler {
+      display: flex;
+    }
+    label,
+    #gender {
+      color: white;
+      font-size: 18px;
+      padding: 20px 0 20px 20px;
+      select,
+      input {
+        background: transparent;
+        margin: 0 10px;
+        border: none;
+        border-bottom: 1px solid #11182a;
+        color: #11182a;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px #44aadd inset !important;
+        }
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    .tickets {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 70%;
+      margin: 0 auto;
+      h3 {
+        width: 100%;
+        color: white;
+        text-align: center;
+        font-family: "IM Fell French Canon Pro";
+        font-size: 18px;
+      }
+    }
+    #class {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 45%;
+      padding-right: 20px;
+
+      label {
+        padding: 0;
+        span {
+          display: block;
+          width: 0;
+          height: 0;
+          opacity: 0;
+          color: white;
+          text-align: center;
+          font-family: "IM Fell French Canon Pro";
+        }
+        [type="radio"] {
+          position: absolute;
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        [type="radio"] + img {
+          cursor: pointer;
+        }
+        [type="radio"]:checked + img {
+          filter: drop-shadow(0 0 0.75em white);
+        }
+        img {
+          width: 200px;
+        }
+      }
+    }
+    #embarqued {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      h3 {
+        width: 100%;
+        color: white;
+        text-align: center;
+        font-family: "IM Fell French Canon Pro";
+        font-size: 18px;
+      }
+      label {
+        span {
+          display: block;
+          color: white;
+          text-align: center;
+          font-family: "IM Fell French Canon Pro";
+          padding: 20px 0;
+        }
+        [type="radio"] {
+          position: absolute;
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        [type="radio"] + img {
+          cursor: pointer;
+        }
+        [type="radio"]:checked + img {
+          filter: drop-shadow(0 0 0.75em brown);
+        }
+        img {
+          width: 250px;
+        }
+      }
+    }
   }
 }
