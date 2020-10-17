@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../assets/images/hero-titanic.jpg') no-repeat;
+  background: url("../assets/images/hero-titanic.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   .btn {
@@ -19,7 +19,7 @@
     border-color: transparent;
     outline: none;
     cursor: pointer;
-     animation: arrowAnimation 2s infinite ease-in-out;
+    animation: arrowAnimation 2s infinite ease-in-out;
     .arrow {
       width: 50px;
       height: 50px;
@@ -31,18 +31,17 @@
     left: 15vh;
     color: white;
     text-align: center;
-    font-family: 'Sucrose Bold Two';
+    font-family: "Sucrose Bold Two";
     text-align: right;
     font-size: 8vw;
     margin: 0;
-    line-height: .8;
-    filter: drop-shadow(0 0 .75em black);
+    line-height: 0.8;
+    filter: drop-shadow(0 0 0.75em black);
     span {
       display: block;
-      font-family: 'IM Fell French Canon Pro';
+      font-family: "Open Sans Condensed", sans-serif;
       font-size: 0.38em;
       line-height: 2;
-  
     }
   }
 }

@@ -1,33 +1,66 @@
+$txt_color: black;
 .Form {
   min-height: 100vh;
-  padding: 5%;
-  background: url("../assets/images/waves.png"), #44aadd;
+  padding: 3% 15%;
+  background: url("../assets/images/pattern-abstract.png") whitesmoke;
+  background-repeat: no-repeat;
+  //background-size: 100%;
+  h2 {
+    text-transform: uppercase;
+    color: $txt_color;
+    text-align: center;
+    font-size: 25px;
+  }
   form {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    .traveler {
+    margin: 0 auto;
+    .passenger-data {
       display: flex;
+      flex-direction: column;
+      h3 {
+        width: 100%;
+        color: $txt_color;
+        font-family: "Open Sans Condensed", sans-serif;
+        font-size: 20px;
+      }
+      #name {
+        min-width: 70%;
+      }
     }
     label,
     #gender {
-      color: white;
-      font-size: 18px;
-      padding: 20px 0 20px 20px;
+      width: fit-content;
+      display: inline;
+      color: $txt_color;
+      font-size: 20px;
+      padding: 10px;
       select,
       input {
         background: transparent;
-        margin: 0 10px;
+        font-size: 16px;
+        margin: 10px;
         border: none;
-        border-bottom: 1px solid #11182a;
-        color: #11182a;
+        border-bottom: 1px solid $txt_color;
+        color: $txt_color;
         &:-webkit-autofill,
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
         &:-webkit-autofill:active {
-          -webkit-box-shadow: 0 0 0 30px #44aadd inset !important;
+          -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0) inset !important;
+          -webkit-text-fill-color: $txt_color;
+        }
+        option {
+          color: $txt_color;
+          font-size: 18px;
+        }
+        &#age {
+          max-width: 100px;
         }
       }
+
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -37,24 +70,24 @@
     .tickets {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
-      width: 70%;
-      margin: 0 auto;
+      width: 100%;
+      margin-top: 20px;
       h3 {
         width: 100%;
-        color: white;
-        text-align: center;
-        font-family: "IM Fell French Canon Pro";
-        font-size: 18px;
+        color: $txt_color;
+        font-family: "Open Sans Condensed", sans-serif;
+        font-size: 20px;
+        margin-bottom: 0;
       }
     }
     #class {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      width: 45%;
+      //flex-direction: column;
+      justify-content: space-between;
       padding-right: 20px;
-
+      width: 58%;
       label {
         padding: 0;
         span {
@@ -62,9 +95,9 @@
           width: 0;
           height: 0;
           opacity: 0;
-          color: white;
+          color: $txt_color;
           text-align: center;
-          font-family: "IM Fell French Canon Pro";
+          font-family: "Open Sans Condensed", sans-serif;
         }
         [type="radio"] {
           position: absolute;
@@ -76,7 +109,7 @@
           cursor: pointer;
         }
         [type="radio"]:checked + img {
-          filter: drop-shadow(0 0 0.75em white);
+          filter: drop-shadow(0 0 0.75em brown);
         }
         img {
           width: 200px;
@@ -85,21 +118,22 @@
     }
     #embarqued {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
+      width: 100%;
       h3 {
         width: 100%;
-        color: white;
-        text-align: center;
-        font-family: "IM Fell French Canon Pro";
-        font-size: 18px;
+        color: $txt_color;
+        margin-bottom: 0;
+        font-family: "Open Sans Condensed", sans-serif;
+        font-size: 20px;
       }
       label {
         span {
           display: block;
-          color: white;
-          text-align: center;
-          font-family: "IM Fell French Canon Pro";
+          color: $txt_color;
+          text-align: left;
+          font-family: "Open Sans Condensed", sans-serif;
           padding: 20px 0;
         }
         [type="radio"] {
@@ -115,7 +149,53 @@
           filter: drop-shadow(0 0 0.75em brown);
         }
         img {
-          width: 250px;
+          width: 200px;
+        }
+      }
+    }
+    #checkout {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .passenger-data {
+        #gender {
+          display: flex;
+          align-items: center;
+          padding: 6px 10px;
+        }
+        .general-data {
+          display: flex;
+        }
+      }
+      span,
+      label {
+        color: $txt_color;
+        padding: 0 10px 0 0;
+        display: block;
+        text-align: left;
+        font-family: "Open Sans Condensed", sans-serif;
+        font-size: 20px;
+      }
+      span {
+        padding: 40px 10px 0;
+      }
+      .price {
+        width: 38%;
+        font-weight: bold;
+      }
+      input[type="submit"] {
+        border-color: #098adb;
+        background-color: #098adb;
+        border-radius: 30px;
+        padding: 5px 25px;
+        margin: 20px 0;
+        cursor: pointer;
+        font-family: "Open Sans Condensed", sans-serif;
+        font-size: 20px;
+        color: white;
+        &:hover {
+          transform: scale(1.1);
+          background-color: rgba($color: #098adb, $alpha: 0.7);
         }
       }
     }

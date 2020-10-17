@@ -1,6 +1,6 @@
 .boat {
   position: relative;
-  width: 50%;
+  width: 38%;
   height: 200px;
 }
 #wholeship {
@@ -377,7 +377,7 @@
 
 .smoke {
   animation: smoke linear infinite;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.5);
   bottom: 35px;
   left: 0;
   border-radius: 50%;

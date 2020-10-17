@@ -3,6 +3,7 @@
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sucrose.woff2")
     format("woff2");
 }
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap");
 @font-face {
   font-family: "IM Fell French Canon Pro";
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/im-fell-french-canon-pro.woff2")
@@ -12,11 +13,13 @@
 @import "./Footer";
 @import "./Form";
 @import "./Ship";
+@import "./Modal";
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 // .Hero {
 //   height: 100vh;

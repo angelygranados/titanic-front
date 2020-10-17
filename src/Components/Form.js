@@ -6,18 +6,28 @@ import Island3 from "../assets/images/island3.svg";
 import ticket1 from "../assets/images/first-class.png";
 import ticket2 from "../assets/images/second-class.png";
 import ticket3 from "../assets/images/third-class.png";
+import Modal from "./Modal";
 
 const Form = () => {
   const [values, setValues] = useState({
-    title: "",
-    rate: "",
     name: "",
     age: "",
     gender: "",
     class: "",
     embarqued: "",
+    companions: "",
+    showModal: false,
   });
-
+  const showModal = false;
+  const companionNumber = 50;
+  const persons = [];
+  for (let i = 0; i <= companionNumber; i++) {
+    persons.push(i);
+  }
+  const price =
+    values.class !== "" && values.companions !== 0 && values.companions !== ""
+      ? parseInt(512 / values.class) * values.companions
+      : "0";
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setValues((values) => ({
@@ -28,91 +38,70 @@ const Form = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(values);
+    setValues((values) => ({
+      ...values,
+      ["showModal"]: true,
+    }));
   };
-
+  const handleClose = (evt) => {
+    evt.preventDefault();
+    setValues((values) => ({
+      ...values,
+      ["showModal"]: false,
+    }));
+  };
   return (
     <section className="Form" id="Form">
+      <Modal show={values.showModal} handleClose={handleClose}>
+        <h2>
+          {values.name}
+          <span>¡Feliciddes!</span>
+        </h2>
+        <p>Viajaste en el Titanic y sobreviviste</p>
+      </Modal>
+      <h2>¡Viajemos!</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Nombre:
-          <select
-            id="title"
-            value={values.title}
-            name="title"
-            onChange={(e) => handleOnChange(e)}
-          >
-            <option value=""></option>
-            <option value="Mr">Mr</option>
-            <option value="Mrs">Mrs</option>
-            <option value="Miss">Miss</option>
-            <option value="Don">Don</option>
-            <option value="Dona">Dona</option>
-            <option value="Sir">Sir</option>
-            <option value="Lady">Lady</option>
-            <option value="Master">Master</option>
-            <option value="Major">Major</option>
-            <option value="Capt">Capt</option>
-            <option value="Dr">Dr</option>
-            <option value="Rev">Rev</option>
-            <option value="Countess">Countess</option>
-            <option value="Col">Col</option>
-            <option value="Jonkheer">Jonkheer</option>
-          </select>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            value={values.name}
-            onChange={(e) => handleOnChange(e)}
-          />
-        </label>
-        <div className="traveler">
+        <div id="embarqued">
+          <h3>Puerto de partida:</h3>
           <label>
-            Edad
+            <span>Cherbourg</span>
             <input
-              id="age"
-              type="number"
-              name="age"
-              value={values.age}
+              type="radio"
+              checked={values.embarqued === "c"}
+              value="c"
+              name="embarqued"
               onChange={(e) => handleOnChange(e)}
             />
+            <img src={Island1} alt="Puerto Cherbourg" />
           </label>
-          <div id="gender">
-            Género:
-            <label>
-              Femenino
-              <input
-                type="radio"
-                checked={values.gender === "Female"}
-                value="Female"
-                name="gender"
-                onChange={(e) => handleOnChange(e)}
-              />
-            </label>
-            <label>
-              Masculino
-              <input
-                type="radio"
-                checked={values.gender === "Male"}
-                value="Male"
-                name="gender"
-                onChange={(e) => handleOnChange(e)}
-              />
-            </label>
-          </div>
+          <label>
+            <span>Queenstown</span>
+            <input
+              type="radio"
+              checked={values.embarqued === "q"}
+              value="q"
+              name="embarqued"
+              onChange={(e) => handleOnChange(e)}
+            />
+            <img src={Island3} alt="Puerto Queenstown" />
+          </label>
+          <label>
+            <span>Southampton</span>
+            <input
+              type="radio"
+              checked={values.embarqued === "s"}
+              value="s"
+              min="0"
+              max="20"
+              name="embarqued"
+              onChange={(e) => handleOnChange(e)}
+            />
+            <img src={Island2} alt="Puerto Southampton" />
+          </label>
         </div>
-        <label>
-          Precio:
-          <input
-            name="rate"
-            type="number"
-            value={values.rate}
-            onChange={(e) => handleOnChange(e)}
-          />
-        </label>
         <div className="tickets">
-          <h3>Clase:</h3>
+          <h3>Selecciona tu boleto:</h3>
+          <Ship key="boat" {...values} />
           <div id="class">
             <label>
               <span>Primera</span>
@@ -148,45 +137,79 @@ const Form = () => {
               <img src={ticket3} alt="Ticket Tercera Clase" />
             </label>
           </div>
-          <Ship key="boat" {...values} />
         </div>
-        <div id="embarqued">
-          <h3>Puerto de partida:</h3>
-          <label>
-            <span>Cherbourg</span>
-            <input
-              type="radio"
-              checked={values.embarqued === "c"}
-              value="c"
-              name="embarqued"
-              onChange={(e) => handleOnChange(e)}
-            />
-            <img src={Island1} alt="Puerto Cherbourg" />
-          </label>
-          <label>
-            <span>Queenstown</span>
-            <input
-              type="radio"
-              checked={values.embarqued === "q"}
-              value="q"
-              name="embarqued"
-              onChange={(e) => handleOnChange(e)}
-            />
-            <img src={Island3} alt="Puerto Queenstown" />
-          </label>
-          <label>
-            <span>Southampton</span>
-            <input
-              type="radio"
-              checked={values.embarqued === "s"}
-              value="s"
-              name="embarqued"
-              onChange={(e) => handleOnChange(e)}
-            />
-            <img src={Island2} alt="Puerto Southampton" />
-          </label>
+        <div id="checkout">
+          <div className="passenger">
+            <div className="passenger-data">
+              <h3>Datos del pasajero: </h3>
+              <div className="general-data">
+                <label>
+                  Nombre:
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    autoComplete="false"
+                    value={values.name}
+                    onChange={(e) => handleOnChange(e)}
+                  />
+                </label>
+
+                <label>
+                  Edad
+                  <input
+                    id="age"
+                    type="number"
+                    name="age"
+                    value={values.age}
+                    onChange={(e) => handleOnChange(e)}
+                  />
+                </label>
+                <div id="gender">
+                  Género:
+                  <label>
+                    F
+                    <input
+                      type="radio"
+                      checked={values.gender === "Female"}
+                      value="Female"
+                      name="gender"
+                      onChange={(e) => handleOnChange(e)}
+                    />
+                  </label>
+                  <label>
+                    M
+                    <input
+                      type="radio"
+                      checked={values.gender === "Male"}
+                      value="Male"
+                      name="gender"
+                      onChange={(e) => handleOnChange(e)}
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <label>
+              ¿Cuántos boletos quieres?
+              <select
+                value={values.companions}
+                name="companions"
+                onChange={(e) => handleOnChange(e)}
+              >
+                {persons.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div className="price">
+            <span>Total: ${price}</span>
+            <input type="submit" value="¡Vámos ya!" />
+          </div>
         </div>
-        <input type="submit" value="Submit" />
       </form>
     </section>
   );
