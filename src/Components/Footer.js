@@ -5,11 +5,19 @@ const Footer = () => {
     <footer className="Footer">
       <span>
         Creado por:{" "}
-        <a href="https://twitter.com/angelygranados" target="_blank">
+        <a
+          href="https://twitter.com/angelygranados"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           @angelygranados
         </a>{" "}
         y
-        <a href="https://twitter.com/osmandi" target="_blank">
+        <a
+          href="https://twitter.com/osmandi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           @osmandi
         </a>
       </span>

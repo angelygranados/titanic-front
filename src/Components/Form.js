@@ -18,7 +18,7 @@ const Form = () => {
     companions: "",
     showModal: false,
   });
-  const showModal = false;
+
   const companionNumber = 50;
   const persons = [];
   for (let i = 0; i <= companionNumber; i++) {
@@ -55,7 +55,7 @@ const Form = () => {
       <Modal show={values.showModal} handleClose={handleClose}>
         <h2>
           {values.name}
-          <span>¡Feliciddes!</span>
+          <span>¡Felicidades!</span>
         </h2>
         <p>Viajaste en el Titanic y sobreviviste</p>
       </Modal>
