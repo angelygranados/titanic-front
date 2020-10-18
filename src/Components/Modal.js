@@ -22,7 +22,7 @@ const Modal = ({ handleClose, show, children }) => {
               data-sharer="twitter"
               data-title="I traveled on the Titanic, try yourself"
               data-hashtags="awesome, machinelearning, app"
-              data-url="https://titanic.now.sh"
+              data-url="https://titanic-front.vercel.app/"
             >
               <img src={twitterIcon} alt="Twitter" />
             </button>
@@ -31,7 +31,7 @@ const Modal = ({ handleClose, show, children }) => {
               className="modal-btn facebook"
               data-sharer="facebook"
               data-hashtag="machinelearning, app"
-              data-url="https://titanic.now.sh"
+              data-url="https://titanic-front.vercel.app/"
             >
               <img src={facebookIcon} alt="Facebook" />
             </button>
